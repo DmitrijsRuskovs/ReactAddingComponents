@@ -1,3 +1,4 @@
+/* eslint linebreak-style: ["error", "windows"] */
 /* eslint-disable max-len */
 /* eslint-disable spaced-comment */
 /* eslint-disable no-unused-vars */
@@ -68,9 +69,9 @@ const App = () => {
     }
     const clonedArray: Todo[] = [...todo];
     ToastMessage(todoMessage);
-    setTodo(clonedArray);   
+    setTodo(clonedArray);
   };
-  
+
   const inputElement = useRef<HTMLInputElement>(null);
 
   const focusInput = () => {
@@ -79,7 +80,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    focusInput();   
+    focusInput();
   }, [deleteTodo]);
 
   return (
@@ -90,7 +91,7 @@ const App = () => {
           addTodo();
         }}
         className="inputWrapper"
-      >       
+      >
         <input
           className="input"
           type="text"
@@ -104,7 +105,7 @@ const App = () => {
         <button
           type="submit"
           className={inputAllowed ? 'button' : 'inactiveInput'}
-          ///onClick={addTodo}
+        ///onClick={addTodo}
         >
           Submit
         </button>
@@ -122,12 +123,12 @@ const App = () => {
         {todo.map(({ visible, id, title }, index) => (
           visible && (
             <TODOcomponent
-              id={id}             
+              id={id}
               title={title}
               onClickComplete={() => completeTask(index)}
               onClickDelete={() => deleteTodo(id)}
               disabled={!inputAllowed}
-            />         
+            />
           )
         ))}
       </div>
